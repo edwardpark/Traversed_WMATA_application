@@ -1,0 +1,22 @@
+{
+  "name": "betterbus",
+  "version": "1.0.0",
+  "description": "bus weather api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwardpark/WDI_Project3_API.git"
+  },
+  "author": "team capa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edwardpark/WDI_Project3_API/issues"
+  },
+  "homepage": "https://github.com/edwardpark/WDI_Project3_API#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
