@@ -1,24 +1,26 @@
 # WDI_Project2_API
-Group project for the General Assembly Web Immersive
+> Group project for the General Assembly Web Immersive
 
-Technical Requirements
+#### Technical Requirements
 
-Back-end
+##### Back-end
 
-Your API includes at least 2 models, one of which may be a user
-Your models include at least one association
-At least one model includes all CRUD functions via RESTful routes
-Front-end
+* Your API includes at least 2 models, one of which may be a user
+* Your models include at least one association
+* At least one model includes all CRUD functions via RESTful routes
 
-Your app provides a reasonable user experience
-Your app includes at least one view
-Your view(s) includes at least one AJAX request that allows a user to somehow interact with the API
-Your code, as rendered in the browser, passes a CSS validator and an HTML validator
-Publication
+##### Front-end
 
-Your code is commented only with what is necessary to document the intent of your code; that is, there are no commented-out chunks of unused code.
+* Your app provides a reasonable user experience
+* Your app includes at least one view
+* Your view(s) includes at least one AJAX request that allows a user to somehow interact with the API
+* Your code, as rendered in the browser, passes a CSS validator and an HTML validator
+
+##### Publication
+> Your code is commented only with what is necessary to document the intent of your code; that is, there are no commented-out chunks of unused code.
 Problematic code? Leave it in the branch and direct us there.
-Submission
+
+##### Submission
 
 Your submission is received on-time via a pull request
 The submission contains:
