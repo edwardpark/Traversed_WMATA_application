@@ -12,3 +12,5 @@ router.get("/busstops", function(req, res){
     res.json(busStops);
   });
 });
+
+module.exports = router;
