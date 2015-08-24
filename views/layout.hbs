@@ -10,7 +10,40 @@
   </head>
   <body>
     <header><h1>Better Bus App</h1></header>
+    <form id="search">
+      <input type="search" placeholder="Enter a bus stop." id="bus-search">
+      <input id="submit" type="submit" value="Submit">
+    </form>
     {{{ body }}}
+  <script>
 
+    $(document).ready(function(){
+      $("#submit").on("click", function(event){
+        event.preventDefault()
+        // var configuration = require("./config/keys.json");
+        var stopId = $('#bus-search').val()
+        var apiKey = ;
+        var url = 'https://api.wmata.com/NextBusService.svc/json/jPredictions?StopID=' + stopId + '&api_key='+ apiKey;
+        $.ajax({
+          url: url,
+          type: "GET",
+          dataType: "json"
+        }).done(function(response){
+          $(response.Search).each(function(index){
+            console.log(this.Predictions);
+
+          })
+            console.log(response);
+            console.log(response.StopName);
+            $("body").append("<p>" + response.StopName + "</p>")
+            $("body").append("<p>" + "Arriving in: " + response.Predictions[2].Minutes + " minutes </p>")
+        }).fail(function(){
+          console.log("ajax request failed!")
+        }).always(function(){
+          console.log("this always happens")
+        })
+      })
+    })
+  </script>
   </body>
 </html>
