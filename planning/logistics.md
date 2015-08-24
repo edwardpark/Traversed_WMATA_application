@@ -17,3 +17,14 @@ Thursday:
   ?
 Friday:
   Debugging
+
+/////////////Pseudocode for MVP/////////////////////////
+I. Access Weather API
+
+II. Access Bus API
+
+III. Render On Screen
+
+IV. Create a Search
+
+V. Create a New Search
