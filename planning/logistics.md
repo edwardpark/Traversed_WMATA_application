@@ -18,13 +18,15 @@ Thursday:
 Friday:
   Debugging
 
-/////////////Pseudocode for MVP/////////////////////////
+###### Monday
 I. Access Weather API
-
 II. Access Bus API
-
 III. Render On Screen
-
 IV. Create a Search
-
 V. Create a New Search
+
+Steps for install:
+I. Run `npm install`
+II. Run `createdb bus_app_db`
+III. Run `node db/migrate.js`
+IV. Run `node db/seeds.js`
