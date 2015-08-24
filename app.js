@@ -19,16 +19,24 @@ var request = require("request");
 
 var configuration = require("./config/keys.json");
 var wmta_key = configuration.wmta.api_key;
-
+var darkSky_key = configuration.darkSky.api_key;
 app.listen("3000", function(){
   console.log("big Burrito is SAUCY!")
 });
 var stopId = 1001195;
 var apiKey = wmta_key;
+var darkSkyApiKey = darkSky_key;
+var latitude = 37.8267;
+var longitude = -122.423;
 
 var options = {
   url: 'https://api.wmata.com/NextBusService.svc/json/jPredictions?StopID=' + stopId + '&api_key='+ apiKey,
 };
+
+var weather = {
+  url: 'https://api.forecast.io/forecast/' + darkSkyApiKey + '/' + latitude + ',' + longitude
+};
+
 function callback(error, response, body) {
   if (!error && response.statusCode == 200) {
     console.log([body]);
