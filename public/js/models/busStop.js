@@ -3,7 +3,7 @@ var BusStop = function(info){
   this.lon = info.Lon;
   this.name = info.Name;
   this.routes = info.Routes;
-  this.stopid = info.StopID;
+  this.stopID = info.StopID;
   this.id = info.id;
 };
 
@@ -12,9 +12,10 @@ BusStop.fetch = function(){
   .then(function(response) {
     var busStops = [];
     for(var i = 0; i < response.length; i++){
-      movies.push(new BusStop(response[i]));
+      busStops.push(new BusStop(response[i]));
     }
     return busStops;
+    console.log("busStops is " + busStops)
     })
   .fail(function(response){
       console.log("js failed to load");
