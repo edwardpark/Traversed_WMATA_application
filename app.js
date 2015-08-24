@@ -23,6 +23,8 @@ var wmta_key = configuration.wmta.api_key;
 app.listen("3000", function(){
   console.log("big Burrito is SAUCY!")
 });
+
+/////////////////////NextBus API call///////////////////////
 var stopId = 1001195;
 var apiKey = wmta_key;
 
@@ -31,8 +33,11 @@ var options = {
 };
 function callback(error, response, body) {
   if (!error && response.statusCode == 200) {
-    console.log([body]);
+    var data = JSON.parse(body);  //converts string to JSON format
+    stopAddress = data.StopName;
+    predictions = data.Predictions; //array of objects
   }
 }
 
 request(options, callback);
+///////////////////////////////////////////////////////////

@@ -20,8 +20,10 @@
     "body-parser": "^1.13.3",
     "express": "^4.13.3",
     "hbs": "^3.1.0",
+    "jquery": "^2.1.4",
     "pg": "^4.4.1",
     "pg-hstore": "^2.3.2",
+    "request": "^2.61.0",
     "sequelize": "^3.6.0"
   }
 }
