@@ -1,9 +1,9 @@
 #A Better Bus App
 ##User Stories
-*As a bus rider I should be able to search arriving busses by my stop.
-*As a bus rider I should be able to view the soonest arrival times.
-*As a bus rider I should be able to see the predicted weather for the day.
-*As a bus rider I should be able to initiate a new search.
+* As a bus rider I should be able to search arriving busses by my stop.
+* As a bus rider I should be able to view the soonest arrival times.
+* As a bus rider I should be able to see the predicted weather for the day.
+* As a bus rider I should be able to initiate a new search.
 
 # WDI Project 3 API
 > Group project for the General Assembly Web Immersive
