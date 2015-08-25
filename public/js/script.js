@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $("#search").on("submit", function(event){
     event.preventDefault();
+    $(".buses").html("");
     var stopId = $("#bus-search").val()
     var url = "http://localhost:3000/busstop/" + stopId;
     $.ajax({
