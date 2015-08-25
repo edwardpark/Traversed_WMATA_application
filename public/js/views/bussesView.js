@@ -1,9 +1,9 @@
-var busView = function(bus){
+var BusView = function(bus){
   this.bus = bus;
   this.$el = $("<div class='bus'></div>");
 }
 
-busView.prototype = {
+BusView.prototype = {
   render: function(){
     var self = this;
 
@@ -13,8 +13,7 @@ busView.prototype = {
 
   busTemplate: function(bus){
     var html = $("<div>");
-    html.append("<h2>" + bus.RouteID + "</h2>")
-    html.append("<p>arrives in " + bus.minutes+"</p>")
+    html.append("<h2>" + bus.routeID + " " + bus.minutes+" min</h2>")
     return(html);
   }
 }
