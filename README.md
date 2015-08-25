@@ -5,6 +5,8 @@
 * As a bus rider I should be able to see the predicted weather for the day.
 * As a bus rider I should be able to initiate a new search.
 
+##Early Mockups
+![alt tag](https://github.com/edwardpark/WDI_Project3_API/blob/master/public/resources/BetterBusApp.png)
 # WDI Project 3 API
 > Group project for the General Assembly Web Immersive
 
