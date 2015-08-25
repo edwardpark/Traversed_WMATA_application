@@ -7,6 +7,7 @@
 
 ##Early Mockups
 ![alt tag](https://github.com/edwardpark/WDI_Project3_API/blob/master/public/resources/BetterBusApp.png)
+![alt tag](https://github.com/edwardpark/WDI_Project3_API/blob/master/public/resources/BetterBusApp2.png)
 # WDI Project 3 API
 > Group project for the General Assembly Web Immersive
 
