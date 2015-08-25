@@ -1,9 +1,14 @@
 $(document).ready(function(){
-  BusStop.fetch().then(function(busStops){
-    busStops.forEach(function(busStop){
-      var view = new BusStopView(busStop)
-      view.render();
-    })
-  })
+  $( "#search" ).submit(function( event ) {
+  alert( "Handler for .submit() called." );
+  event.preventDefault();
+});
+
+  // BusStop.fetch().then(function(busStops){
+  //   busStops.forEach(function(busStop){
+  //     var view = new BusStopView(busStop)
+  //     view.render();
+  //   })
+  //   })
 
 });

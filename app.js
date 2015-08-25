@@ -17,9 +17,13 @@ app.use("/", busStopsController);
 
 var request = require("request");
 
+///security configuration for api keys////
 var configuration = require("./config/keys.json");
 var wmta_key = configuration.wmta.api_key;
 var darkSky_key = configuration.darkSky.api_key;
+
+
+
 app.listen("3000", function(){
   console.log("big Burrito is SAUCY!")
 });
@@ -34,18 +38,39 @@ var longitude = -122.423;
 var options = {
   url: 'https://api.wmata.com/NextBusService.svc/json/jPredictions?StopID=' + stopId + '&api_key='+ apiKey,
 };
-
 var weather = {
   url: 'https://api.forecast.io/forecast/' + darkSkyApiKey + '/' + latitude + ',' + longitude
 };
-
-function callback(error, response, body) {
-  if (!error && response.statusCode == 200) {
-    var data = JSON.parse(body);  //converts string to JSON format
-    stopAddress = data.StopName;
-    predictions = data.Predictions; //array of objects
-  }
+///////////////////////////////////////////////////////////
+//issue getting the function call to return the right data.
+var busStopInfo = {};
+var busAPIInfo;
+var rez;
+function processMyData(){
+  console.log("This callback is firing.");
+  busStopInfo["buses"] = busAPIInfo.Predictions;
+  rez.send(busStopInfo);
+  doCrapWithData();
 }
 
-request(options, callback);
-///////////////////////////////////////////////////////////
+function doCrapWithData(){
+  doOtherCrapWithData();
+}
+
+function doOtherCrapWithData(){
+  rez.json(busStopInfo)
+}
+
+app.get("/busstop/123", function(req, nodeResponse){
+  request(options,function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      rez = nodeResponse;
+      busAPIInfo = JSON.parse(body);
+      processMyData();
+    }
+  });//end of request module
+});
+ //make http call to weather API
+ //insert values into object
+ //return response object "bustopinfo" to client0side
+//});//end of app.get"/busstop/123"
