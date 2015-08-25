@@ -53,7 +53,7 @@ var getBusInfo = {
 
 }
 
-app.get("/busstop/123", function(req, nodeResponse){
+app.get("/busstop/:stopId", function(req, nodeResponse){
   request(options,function (error, response, body) {
     if (!error && response.statusCode == 200) {
       getBusInfo.rez = nodeResponse;
