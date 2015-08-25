@@ -1,5 +1,6 @@
 var BusView = function(bus){ //creates the bus view contructor
   this.bus = bus;
+  console.log("Bus is " + this.bus)
   this.$el = $("<div class='bus'></div>");
 }
 
@@ -14,6 +15,7 @@ BusView.prototype = {
   busTemplate: function(bus){
     var html = $("<div>");
     html.append("<h2>" + bus.routeID + " " + bus.minutes+" min</h2>")
+    console.log(html);
     return(html);
   }
 }
