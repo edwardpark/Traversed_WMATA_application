@@ -43,30 +43,22 @@ var weather = {
 };
 ///////////////////////////////////////////////////////////
 //issue getting the function call to return the right data.
-var busStopInfo = {};
-var busAPIInfo;
-var rez;
-function processMyData(){
-  console.log("This callback is firing.");
-  busStopInfo["buses"] = busAPIInfo.Predictions;
-  rez.send(busStopInfo);
-  doCrapWithData();
-}
+var getBusInfo = {
+  busAPIInfo: "",
+  rez: "",
 
-function doCrapWithData(){
-  doOtherCrapWithData();
-}
+  sendJSON: function(){
+    this.rez.json(this.busAPIInfo)
+  }
 
-function doOtherCrapWithData(){
-  rez.json(busStopInfo)
 }
 
 app.get("/busstop/123", function(req, nodeResponse){
   request(options,function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      rez = nodeResponse;
-      busAPIInfo = JSON.parse(body);
-      processMyData();
+      getBusInfo.rez = nodeResponse;
+      getBusInfo.busAPIInfo = JSON.parse(body);
+      getBusInfo.sendJSON();
     }
   });//end of request module
 });
