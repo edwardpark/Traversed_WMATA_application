@@ -6,8 +6,11 @@ var Bus = function(info){
   this.stopID = info.StopID;
   this.id = info.id;
 }
-Bus.fetch = function(){
-  var request = $.getJSON("http://localhost:3000/busstop/:id")
+Bus.fetch = function(id){
+  console.log("I'm here!");
+  console.log(id);
+  var request = $.getJSON("http://localhost:3000/busstop/"+id)
+  console.log(request)
   .then(function(response){
     var busses = []
     for(var i=0; i<response.length; i++){
