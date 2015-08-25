@@ -29,32 +29,33 @@ app.listen("3000", function(){
 });
 
 /////////////////////NextBus API call///////////////////////
-var stopId = 1001195;
+//var stopId = 1001195;
 var apiKey = wmta_key;
 var darkSkyApiKey = darkSky_key;
 var latitude = 37.8267;
 var longitude = -122.423;
 
-var options = {
-  url: 'https://api.wmata.com/NextBusService.svc/json/jPredictions?StopID=' + stopId + '&api_key='+ apiKey,
+function options(id){
+  return  {
+  url: 'https://api.wmata.com/NextBusService.svc/json/jPredictions?StopID=' + id + '&api_key='+ apiKey
+  }
 };
+
 var weather = {
   url: 'https://api.forecast.io/forecast/' + darkSkyApiKey + '/' + latitude + ',' + longitude
 };
 ///////////////////////////////////////////////////////////
-//issue getting the function call to return the right data.
 var getBusInfo = {
   busAPIInfo: "",
   rez: "",
-
   sendJSON: function(){
     this.rez.json(this.busAPIInfo)
   }
-
 }
 
-app.get("/busstop/:stopId", function(req, nodeResponse){
-  request(options,function (error, response, body) {
+app.get("/busstop/:id", function(req, nodeResponse){
+
+  request(options(req.params.id),function (error, response, body) {
     if (!error && response.statusCode == 200) {
       getBusInfo.rez = nodeResponse;
       getBusInfo.busAPIInfo = JSON.parse(body);
