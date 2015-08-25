@@ -1,4 +1,6 @@
 #A Better Bus App
+Making a more intuitive bus app for Washington, DC system.
+
 ##User Stories
 * As a bus rider I should be able to search arriving busses by my stop.
 * As a bus rider I should be able to view the soonest arrival times.
