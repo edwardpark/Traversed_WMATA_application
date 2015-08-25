@@ -1,8 +1,10 @@
 $(document).ready(function(){
-  $( "#search" ).submit(function( event ) {
-  alert( "Handler for .submit() called." );
-  event.preventDefault();
-});
+  Bus.fetch().then(function(busses){
+    busses.forEach(function(bus){
+      var view = new BusView(bus)
+      view.render();
+    })
+  })
 
   // BusStop.fetch().then(function(busStops){
   //   busStops.forEach(function(busStop){
