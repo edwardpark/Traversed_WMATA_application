@@ -17,13 +17,6 @@ app.use("/", busStopsController);
 
 var request = require("request");
 
-///security configuration for api keys////
-// var configuration = require("./config/keys.json");
-// var wmta_key = configuration.wmta.api_key;
-// var darkSky_key = configuration.darkSky.api_key;
-//
-
-
 app.listen(process.env.PORT || 3000, function(){
   console.log("Listening on port 3000");
 });
@@ -63,10 +56,7 @@ var getWeatherInfo = {
   }
 }
 app.get("/weather",function(req,nodeResponse){
-  //query over database for sequelize inserting stop id
-  //return lat * longitude
-  //input into variables
-  //rest of call is the same
+
   request(weather,function(error,response,body){
     if (!error && response.statusCode == 200){
       getWeatherInfo.rez = nodeResponse;
