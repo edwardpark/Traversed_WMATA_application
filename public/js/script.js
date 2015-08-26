@@ -15,7 +15,7 @@ $(document).on('click', "#submit", function(event){
     event.preventDefault();
     $(".buses").html("");
     var stopId = $("#bus-search").val()
-    var url = "http://localhost:3000/busstop/" + stopId;
+    var url = "https://ancient-peak-2424.herokuapp.com/busstop/" + stopId;
     $.ajax({
       url: url,
       type: "GET",
@@ -33,7 +33,7 @@ $(document).on('click', "#submit", function(event){
     })
 
     $(".weather").html("");
-    var urlWeather = "http://localhost:3000/weather/";
+    var urlWeather = "https://ancient-peak-2424.herokuapp.com/weather/";
     $.ajax({
       url: urlWeather,
       type: "GET",
