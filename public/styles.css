@@ -1,4 +1,8 @@
 /* MAIN */
+#submit {
+  width: 45px;
+}
+
 li {
   padding: 0;
   margin:0;
@@ -13,6 +17,13 @@ h1 {
 }
 
 /* ICONS */
+.footerimg {
+  width: 45px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
 img.icon {
     width: 20%;
 }
@@ -20,7 +31,7 @@ img.icon {
 .weather {
     display: inline-block;
     position: absolute;
-    width: 20%;
+    width: 50%;
 }
 
 .weather p {
@@ -99,6 +110,10 @@ ul.nav {
   margin-top: 0px;
 }
 /* INPUT FORMS */
+input {
+  text-align: center;
+}
+
 input[type=search] {
    border: none;
    background-color: #031a3c;
@@ -107,6 +122,10 @@ input[type=search] {
  }
 input:focus{
      outline: none;
+}
+
+input:-webkit-autofill {
+    color: ##031a3c !important;
 }
 /* MOBILE NAV */
 
