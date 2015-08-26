@@ -18,9 +18,9 @@ app.use("/", busStopsController);
 var request = require("request");
 
 ///security configuration for api keys////
-var configuration = require("./config/keys.json");
-var wmta_key = configuration.wmta.api_key;
-var darkSky_key = configuration.darkSky.api_key;
+// var configuration = require("./config/keys.json");
+// var wmta_key = configuration.wmta.api_key;
+// var darkSky_key = configuration.darkSky.api_key;
 
 
 
@@ -29,11 +29,10 @@ app.listen("3000", function(){
 });
 
 /////////////////////NextBus API call///////////////////////
-//var stopId = 1001195;
-var apiKey = wmta_key;
-var darkSkyApiKey = darkSky_key;
-var latitude = 37.8267;
-var longitude = -122.423;
+// var apiKey = wmta_key;
+// var darkSkyApiKey = darkSky_key;
+var latitude = 38.898663;
+var longitude = -77.036358;
 
 function options(id){
   return  {
@@ -53,6 +52,27 @@ var getBusInfo = {
   }
 }
 
+var getWeatherInfo = {
+  weatherInfo:"",
+  rez:"",
+  sendJSON: function(){
+    this.rez.json(this.weatherInfo);
+  }
+}
+app.get("/weather",function(req,nodeResponse){
+  //query over database for sequelize inserting stop id
+  //return lat * longitude
+  //input into variables
+  //rest of call is the same
+  request(weather,function(error,response,body){
+    if (!error && response.statusCode == 200){
+      getWeatherInfo.rez = nodeResponse;
+      getWeatherInfo.weatherInfo = JSON.parse(body);
+      getWeatherInfo.sendJSON();
+    }
+  });
+});//end of app.get("/weather")
+
 app.get("/busstop/:id", function(req, nodeResponse){
 
   request(options(req.params.id),function (error, response, body) {
@@ -62,8 +82,4 @@ app.get("/busstop/:id", function(req, nodeResponse){
       getBusInfo.sendJSON();
     }
   });//end of request module
-});
- //make http call to weather API
- //insert values into object
- //return response object "bustopinfo" to client0side
-//});//end of app.get"/busstop/123"
+});//end of app.get("/busstop")
