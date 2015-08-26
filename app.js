@@ -29,6 +29,7 @@ app.listen("3000", function(){
 });
 
 /////////////////////NextBus API call///////////////////////
+console.log("FOOOOOOO");
 var apiKey = process.env.apiKey;
 var darkSkyApiKey = process.env.darkSkyApiKey;
 var latitude = 38.898663;
