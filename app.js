@@ -23,7 +23,6 @@ var wmta_key = configuration.wmta.api_key;
 var darkSky_key = configuration.darkSky.api_key;
 
 
-
 app.listen("3000", function(){
   console.log("big Burrito is SAUCY!")
 });
@@ -32,8 +31,8 @@ app.listen("3000", function(){
 //var stopId = 1001195;
 var apiKey = wmta_key;
 var darkSkyApiKey = darkSky_key;
-var latitude = 37.8267;
-var longitude = -122.423;
+var latitude = 58.907192;
+var longitude = -77.036871;
 
 function options(id){
   return  {
@@ -57,7 +56,7 @@ app.get("/busstop/:id", function(req, nodeResponse){
 
   request(options(req.params.id),function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      getBusInfo.rez = nodeResponse;
+      getBusInfo.rez = nodeResponse; // nodeResponse will become the response
       getBusInfo.busAPIInfo = JSON.parse(body);
       getBusInfo.sendJSON();
     }
@@ -67,3 +66,20 @@ app.get("/busstop/:id", function(req, nodeResponse){
  //insert values into object
  //return response object "bustopinfo" to client0side
 //});//end of app.get"/busstop/123"
+
+var getWeatherInfo = {
+  weatherInfo:"",
+  rez:"",
+  sendJSON: function(){
+    this.rez.json(this.weatherInfo);
+  }
+}
+app.get("/weather",function(req,nodeResponse){
+  request(weather,function(error,response,body){
+    if (!error && response.statusCode == 200){
+      getWeatherInfo.rez = nodeResponse;
+      getWeatherInfo.weatherInfo = JSON.parse(body);
+      getWeatherInfo.sendJSON();
+    }
+  });
+});//end of app.get("/weather”)

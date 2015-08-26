@@ -4,6 +4,18 @@ li {
   margin:0;
 }
 
+.weather {
+  display: inline-block;
+}
+
+h1 {
+  display: inline-block;
+}
+
+img.icon {
+    width: 10%;
+}
+
 /* NAVIGATION */
 
 .header-wrapper {
