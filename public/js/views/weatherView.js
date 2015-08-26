@@ -1,6 +1,6 @@
-var WeatherView = function(weather){ //creates the bus view contructor
+var WeatherView = function(weather){ //creates the weather view contructor
   this.weather = weather;
-  this.$el = $("<div class='weather-new'></div>");
+  this.$el = $("<div class='weather'></div>");
   console.log("response latitude in view: " + this.weather.latitude)
   console.log("min temp in view: " + this.weather.currently.icon)
   console.log("weather in view: " + this.weather)
@@ -11,14 +11,13 @@ WeatherView.prototype = {
     var self = this; //binds this to the context of the object
 
     self.$el.html(self.weatherTemplate(self.weather)); //changes the inner html of the element to our template
-    $(".weather").append(self.$el); //appends our view to the empty div
+    $(".logo").append(self.$el); //appends our view to the empty div
   },
 
   weatherTemplate: function(weather){
-    var html = $("<div>");
+    var html = $("<p>");
     console.log(weather.latitude);
     var weatherIcon = this.weather.currently.icon // This is rain
-    html.append("<h2>" + weatherIcon + "</h2>")
 
     if (weatherIcon === "partly-cloudy-day") {
       var wicon = "../../public/images/icon-partly-cloudy.png"
@@ -28,7 +27,7 @@ WeatherView.prototype = {
       var wicon = "../../public/images/icon-rain.png"
     }
     else {
-      var wicon = "../../public/images/icon-thunderstorm.png"
+      var wicon = "../../public/images/icon-thunderstorms.png"
       console.log("other weather")
     }
 
