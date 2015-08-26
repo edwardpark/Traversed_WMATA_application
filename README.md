@@ -12,7 +12,8 @@ Making a more intuitive bus app for Washington, DC system.
 ![alt tag](https://github.com/edwardpark/WDI_Project3_API/blob/master/public/resources/BetterBusApp2.png)
 # WDI Project 3 API
 > Group project for the General Assembly Web Immersive
-
+##MVP Heroku Deployment
+https://ancient-peak-2424.herokuapp.com/#
 #### Technical Requirements
 
 ##### Back-end
