@@ -32,6 +32,8 @@ $(document).on('click', "#submit", function(event){
       console.log("Oh noooo! It failed!");
     })
 
+
+
     $(".weather").html("");
     var urlWeather = "http://localhost:3000/weather/";
     $.ajax({
@@ -39,7 +41,10 @@ $(document).on('click', "#submit", function(event){
       type: "GET",
       dataType: "json"
     }).done(function(response){
-      console.log("response latitude: " + response.latitude)
+      console.log("script.js response latitude: " + response.latitude)
+
+      console.log("stored stop id = " + stopId)
+
       latitude = response.latitude;
 
       weather = new WeatherView(response)
@@ -48,5 +53,41 @@ $(document).on('click', "#submit", function(event){
     }).fail(function(){ //closes ajax done function
       console.log("Oh noooo! It failed!");
     })
+
+    // THIS IS FOR MATCHING USER VAL TO DATABASE VAL
+    var request = "http://localhost:3000/busstops/";
+    $.ajax({
+      url: request,
+      type: "GET",
+      dataType: "json"
+    }).done(function(response) {
+      console.log("response is working");
+
+      var busStops = [];
+      for(var i = 0; i < response.length; i++){
+        busStops.push(new BusStop(response[i]));
+        var responseArray = response[i].StopID;
+        console.log(responseArray)
+
+        var entry;
+        for (var index = 0; index < responseArray.length; ++index) {
+            if (responseArray === stopId) {
+              console.log("Response index: " + responseArray)
+              console.log("stop Id is: " + stopId)
+              console.log("The entry matches: ")
+            }
+            else {
+              console.log("Not working")
+            }
+        }
+
+      }
+
+
+      })
+    .fail(function(response){
+        console.log("js failed to load");
+      });
+    return request;
 
 });//closes document.ready
