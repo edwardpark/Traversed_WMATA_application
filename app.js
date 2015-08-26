@@ -17,22 +17,15 @@ app.use("/", busStopsController);
 
 var request = require("request");
 
-///security configuration for api keys////
-var configuration = require("./config/keys.json");
-var wmta_key = configuration.wmta.api_key;
-var darkSky_key = configuration.darkSky.api_key;
-
-
-app.listen("3000", function(){
-  console.log("big Burrito is SAUCY!")
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Listening on port 3000");
 });
 
-/////////////////////NextBus API call///////////////////////
-//var stopId = 1001195;
-var apiKey = wmta_key;
-var darkSkyApiKey = darkSky_key;
-var latitude = 58.907192;
-var longitude = -77.036871;
+//////////////////// API Call Keys///////////////////////
+var apiKey = process.env.apiKey;
+var darkSkyApiKey = process.env.darkSkyApiKey;
+var latitude = 38.898663;
+var longitude = -77.036358;
 
 function options(id){
   return  {
@@ -51,6 +44,24 @@ var getBusInfo = {
     this.rez.json(this.busAPIInfo)
   }
 }
+
+var getWeatherInfo = {
+  weatherInfo:"",
+  rez:"",
+  sendJSON: function(){
+    this.rez.json(this.weatherInfo);
+  }
+}
+app.get("/weather",function(req,nodeResponse){
+
+  request(weather,function(error,response,body){
+    if (!error && response.statusCode == 200){
+      getWeatherInfo.rez = nodeResponse;
+      getWeatherInfo.weatherInfo = JSON.parse(body);
+      getWeatherInfo.sendJSON();
+    }
+  });
+});//end of app.get("/weather")
 
 app.get("/busstop/:id", function(req, nodeResponse){
 
