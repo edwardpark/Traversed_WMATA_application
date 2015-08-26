@@ -34,6 +34,8 @@ var darkSkyApiKey = process.env.darkSkyApiKey;
 var latitude = 38.898663;
 var longitude = -77.036358;
 
+console.log(process.env);
+
 function options(id){
   return  {
   url: 'https://api.wmata.com/NextBusService.svc/json/jPredictions?StopID=' + id + '&api_key='+ apiKey
