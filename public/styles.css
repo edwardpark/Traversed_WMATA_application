@@ -55,6 +55,7 @@ img.icon {
 	top: 0;
 	left: 0;
   color: #031a3c;
+  position: fixed;
 }
 
 .header {
