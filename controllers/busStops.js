@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var BusStop = require("../db/connection").models.BusStop;
+var BusStop = require("../db/connection").models.BusStop; // Because we gave access in our model and require it here, our busStop model is available
 
 function error(response, message){
   response.status(500);

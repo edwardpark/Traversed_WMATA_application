@@ -1,3 +1,15 @@
+// Navigation with jQuery
+
+$(document).on('click', "#menubuttonsvg", function() {
+    $('.mobileNavWrapper').toggleClass('showNav')
+    console.log("click is working")
+});
+
+$(document).on('click', "#backsvg", function() {
+  $('.mobileNavWrapper').removeClass('showNav')
+  console.log("close click is working")
+});
+
 $(document).ready(function(){
   $("#search").on("submit", function(event){
     event.preventDefault();
@@ -19,7 +31,10 @@ $(document).ready(function(){
     }).fail(function(){ //closes ajax done function
       console.log("Oh noooo! It failed!");
     })
+
+
   })//closes event handler
+
 
 
 });//closes document.ready
