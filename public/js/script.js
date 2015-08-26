@@ -22,13 +22,11 @@ $(document).ready(function(){
         $("h2").on("click", function(event){
           event.preventDefault();
           for(var i=0; i<predictions.length; i++){
-            if($(this).html() == predictions[i].RouteID){
-              console.log("I'm here!");
+            if($(event.target).html() == predictions[i].RouteID){
+              console.log($(this).html());
+              console.log(i);
               bus = new BusView(predictions[i])
               bus.render()//renders each bus number and arrival time.
-            }
-            else {
-              console.log("why am I here?");
             }
           }
         })
