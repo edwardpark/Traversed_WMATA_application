@@ -21,7 +21,7 @@ h1 {
   width: 45px;
   display: block;
   margin: 0 auto;
-  padding-top: 15px;
+  padding-top: 4px;
 }
 
 img.icon {
@@ -119,6 +119,7 @@ input[type=search] {
    background-color: #031a3c;
    color: white;
    border-bottom: 2px solid white;
+   -webkit-appearance: none;
  }
 input:focus{
      outline: none;
@@ -222,9 +223,9 @@ input:-webkit-autofill {
 footer {
   width: 100%;
   bottom: 0;
-  height: 100px;
+  height: 80px;
   margin: 0 auto;
-  position: absolute;
+  position: fixed;
   display: block;
 }
 
