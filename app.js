@@ -21,14 +21,11 @@ app.listen(process.env.PORT || 3000, function(){
   console.log("Listening on port 3000");
 });
 
-/////////////////////NextBus API call///////////////////////
-console.log("FOOOOOOO");
+//////////////////// API Call Keys///////////////////////
 var apiKey = process.env.apiKey;
 var darkSkyApiKey = process.env.darkSkyApiKey;
 var latitude = 38.898663;
 var longitude = -77.036358;
-
-console.log(process.env);
 
 function options(id){
   return  {
@@ -70,9 +67,30 @@ app.get("/busstop/:id", function(req, nodeResponse){
 
   request(options(req.params.id),function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      getBusInfo.rez = nodeResponse;
+      getBusInfo.rez = nodeResponse; // nodeResponse will become the response
       getBusInfo.busAPIInfo = JSON.parse(body);
       getBusInfo.sendJSON();
     }
   });//end of request module
-});//end of app.get("/busstop")
+});
+ //make http call to weather API
+ //insert values into object
+ //return response object "bustopinfo" to client0side
+//});//end of app.get"/busstop/123"
+
+var getWeatherInfo = {
+  weatherInfo:"",
+  rez:"",
+  sendJSON: function(){
+    this.rez.json(this.weatherInfo);
+  }
+}
+app.get("/weather",function(req,nodeResponse){
+  request(weather,function(error,response,body){
+    if (!error && response.statusCode == 200){
+      getWeatherInfo.rez = nodeResponse;
+      getWeatherInfo.weatherInfo = JSON.parse(body);
+      getWeatherInfo.sendJSON();
+    }
+  });
+});//end of app.get("/weather”)

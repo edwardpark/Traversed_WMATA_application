@@ -8,6 +8,25 @@ body {
   color: white;
 }
 
+h1 {
+  display: inline-block;
+}
+
+/* ICONS */
+img.icon {
+    width: 20%;
+}
+
+.weather {
+    display: inline-block;
+    position: absolute;
+    width: 20%;
+}
+
+.weather p {
+    margin: 4px 10px;
+}
+
 /* NAVIGATION */
 
 .header-wrapper {
@@ -42,7 +61,7 @@ body {
 }
 
 .logo img {
-  width: 80%;
+  width: 25%;
 }
 
 .header ul {
@@ -218,6 +237,7 @@ background-color: #51743E;
 	display: inline-block;
 }
 
+
 /*MEDIA QUERIES*/
 
 @media screen and (max-width: 1550px) { /*LARGER SCREEN ADJUSTMENTS*/
@@ -229,7 +249,7 @@ background-color: #51743E;
 	width: 100%;
 }
 .header a.logo {
-  margin: 10px 0 0 10px;
+  margin: 3px 0 0 10px;
   width: 230px;
 }
 }
@@ -237,7 +257,7 @@ background-color: #51743E;
 @media screen and (max-width: 1210px) { /*TYPICAL LANDSCAPE TABLET ADJUSTMENTS*/
 .header a.logo {
 	width: 180px;
-	margin: 14px 0 0 20px;
+  margin: 6px 0 0 10px;
 }
 
 .header ul li a {
