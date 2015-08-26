@@ -21,7 +21,7 @@ var request = require("request");
 // var configuration = require("./config/keys.json");
 // var wmta_key = configuration.wmta.api_key;
 // var darkSky_key = configuration.darkSky.api_key;
-
+//
 
 
 app.listen("3000", function(){
@@ -29,8 +29,8 @@ app.listen("3000", function(){
 });
 
 /////////////////////NextBus API call///////////////////////
-// var apiKey = wmta_key;
-// var darkSkyApiKey = darkSky_key;
+var apiKey = process.env.apiKey;
+var darkSkyApiKey = process.env.darkSkyApiKey;
 var latitude = 38.898663;
 var longitude = -77.036358;
 
