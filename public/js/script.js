@@ -10,8 +10,8 @@ $(document).on('click', "#backsvg", function() {
   console.log("close click is working")
 });
 
-$(document).ready(function(){
-  $("#search").on("submit", function(event){
+$(document).on('click', "#submit", function(event){
+  console.log("search is working")
     event.preventDefault();
     $(".buses").html("");
     var stopId = $("#bus-search").val()
@@ -31,10 +31,5 @@ $(document).ready(function(){
     }).fail(function(){ //closes ajax done function
       console.log("Oh noooo! It failed!");
     })
-
-
-  })//closes event handler
-
-
 
 });//closes document.ready
