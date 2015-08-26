@@ -13,7 +13,7 @@ BusView.prototype = {
 
   busTemplate: function(bus){
     var html = $("<div>");
-    console.log(bus.routeID);
+    console.log(bus.RouteID);
     html.append("<h2 class= 'append-transition'>" + this.bus.RouteID + " " + this.bus.Minutes+" min</h2>").fadeIn(2000);
     return(html);
   }
