@@ -13,7 +13,6 @@ BusView.prototype = {
 
   busTemplate: function(bus){
     var html = $("<div>");
-    console.log(bus.routeID);
     html.append("<h2>" + this.bus.RouteID + " " + this.bus.Minutes+" min</h2>")
     return(html);
   }
