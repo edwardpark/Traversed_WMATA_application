@@ -32,7 +32,7 @@ WeatherView.prototype = {
     }
 
 
-    html.append("<img src='" + wicon + "\' class=\"icon\"/>")
+    html.append("<img src='" + wicon + "\' class=\"icon\"/>").fadeIn(2000);
 
     return(html);
   }
