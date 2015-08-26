@@ -18,19 +18,20 @@ WeatherView.prototype = {
     var html = $("<p>");
     console.log(weather.latitude);
     var weatherIcon = this.weather.currently.icon // This is rain
-
+    var weatherSum = this.weather.hourly.summary
+    console.log(weatherIcon);
     if (weatherIcon === "partly-cloudy-day") {
       var wicon = "../../public/images/icon-partly-cloudy.png"
-      console.log("correct weather")
     }
     if (weatherIcon === "rain") {
       var wicon = "../../public/images/icon-rain.png"
     }
+    if (weatherIcon === "cloudy") {
+      var wicon = "../../public/images/icon-cloudy.png"
+    }
     else {
       var wicon = "../../public/images/icon-thunderstorms.png"
-      console.log("other weather")
     }
-
 
     html.append("<img src='" + wicon + "\' class=\"icon\"/>")
 
