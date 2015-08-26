@@ -3,6 +3,10 @@ li {
   padding: 0;
   margin:0;
 }
+body {
+  background-color: #031a3c;
+  color: white;
+}
 
 .weather {
   display: inline-block;
@@ -26,11 +30,13 @@ img.icon {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	position: fixed;
-	background: rgba(26, 26, 26, 0.4);
+	/*background: rgba(26, 26, 26, 0.4);*/
+  background-color: #f0a202;
 	transition:background 0.5s ease ;
 	-webkit-transition:background 0.5s ease ;
 	top: 0;
 	left: 0;
+  color: #031a3c;
 }
 
 .header {
@@ -85,7 +91,16 @@ ul.nav {
   padding-left: 0px;
   margin-top: 0px;
 }
-
+/* INPUT FORMS */
+input[type=search] {
+   border: none;
+   background-color: #031a3c;
+   color: white;
+   border-bottom: 2px solid white;
+ }
+input:focus{
+     outline: none;
+}
 /* MOBILE NAV */
 
 .mobileNavWrapper {
@@ -178,10 +193,42 @@ ul.nav {
 	padding: 0px 0px 8px 13px;
 }
 
+footer {
+  width: 100%;
+  bottom: 0;
+  height: 100px;
+  margin: 0 auto;
+  position: absolute;
+  display: block;
+}
+
+.button{
+  float: left;
+  display: inline;
+  position: relative;
+  color: white;
+  text-decoration: none;
+  padding: 1%;
+  width: 23%;
+  height: 100px;
+  text-align: center;
+}
+#buttonno1{
+background-color: #f0a202;
+}
+#buttonno2{
+background-color: #fe5f55;
+}
+#buttonno3{
+background-color: #276fbf;
+}
+#buttonno4{
+background-color: #51743E;
+}
+
 .logoLink, .mainNav {
 	display: inline-block;
 }
-
 
 /*MEDIA QUERIES*/
 
