@@ -79,7 +79,7 @@ img.icon {
 .weatherflash {
   width: 100%;
   padding: 10px;
-  background-color: green;
+  background-color: #276fbf;
 }
 
 /* NAVIGATION */
@@ -92,7 +92,6 @@ img.icon {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	position: fixed;
-	/*background: rgba(26, 26, 26, 0.4);*/
   background-color: #f0a202;
 	transition:background 0.5s ease ;
 	-webkit-transition:background 0.5s ease ;
@@ -306,6 +305,13 @@ background-color: #51743E;
 
 .logoLink, .mainNav {
 	display: inline-block;
+}
+/* FAQ & ABOUT STYLES */
+.faq {
+  margin: 10px;
+  padding: 1em;
+  background-color: #F6F6F6;
+  color: #031a3c;
 }
 
 

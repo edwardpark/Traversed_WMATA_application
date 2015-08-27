@@ -13,7 +13,8 @@ WeatherView.prototype = {
   renderFlash: function(){
     var self= this;
     var weatherSum = this.weather.hourly.summary
-    $(".flash").append("<p class='weatherflash'>" + weatherSum + "</p>").fadeIn(2000);
+    $(".flash").html("")//make sure the div is empty before appending
+    $(".flash").append("<p class='weatherflash'>" + weatherSum + "</p>");
   },
 
   weatherTemplate: function(weather){
