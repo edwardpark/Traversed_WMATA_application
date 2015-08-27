@@ -56,7 +56,7 @@ $(document).on('click', "#submit", function(event){
                             console.log("The entry matches ")
                             returnLatitude = response[index].Lat;
                             returnLongitude = response[index].Lon;
-                            liftInnerLoop(returnLatitude, returnLongitude);
+                            // liftInnerLoop(returnLatitude, returnLongitude);
 
                           }
                           else {
@@ -89,11 +89,11 @@ $(document).on('click', "#submit", function(event){
 
       }); //END OF .FAIL AND END OF AJAX CALL
 
-      function liftInnerLoop(lat,lon){
-        returnLatitude = lat;
-        returnLongitude = lon;
-        return returnLatitude, returnLongitude;
-      }
+      // function liftInnerLoop(lat,lon){
+      //   returnLatitude = lat;
+      //   returnLongitude = lon;
+      //   return returnLatitude, returnLongitude;
+      // }
 
     $(".weather").html("");
 
