@@ -36,7 +36,6 @@ h1 {
 
 h2 {
   font-weight: lighter;
-  font-size: 23px;
   margin-bottom: 1.5em;
 }
 
@@ -44,18 +43,14 @@ h2 {
 }
 
 .busroute {
-  margin-right: 2em;
-  /*margin-bottom: 1.5em;*/
+  margin: 0em 2em;
 }
 
-.bus-details {
-  margin-left: 7em;
-}
 /* ICONS */
 
 .more-icon {
   width: 1.75em;
-  padding: .25em 3em 0em 2em;
+  padding: 2.15em 3em 0em 2em;
   display: inline-block;
   float: left;
 }
@@ -100,6 +95,31 @@ img.icon {
   padding: 10px;
   background-color: #276fbf;
   margin-bottom: 0;
+}
+
+.bus-icon {
+  margin-bottom: -17px;
+}
+
+/* RETURNED CONTENT */
+
+.bus-content h2, .bus-content h4 {
+  margin-bottom: 0;
+}
+.bus-content h2 {
+  display: inline-block;
+}
+
+.bus-content h4 {
+  display: inline-block;
+  font-weight: lighter;
+  font-size: 23px;
+}
+
+.bus-details {
+  margin-left: 9.25em;
+  font-weight: 500;
+  font-size: 1.25em;
 }
 
 /* NAVIGATION */
@@ -180,6 +200,7 @@ input {
   text-align: center;
   line-height: 2em;
   -webkit-box-shadow: 0 0 0px 1000px rgb(3, 26, 60) inset;
+  -webkit-text-fill-color: #fff;
 }
 
 input[type=search] {
@@ -413,6 +434,15 @@ img.icon {
     width: 23%;
 }
 
+#menubuttonsvg:hover, #backsvg:hover {
+	background: #1E507D;
+	padding: 0px 0px 6px 13px;
+}
+
+.weatherflash {
+  margin: 10px 0px;
+}
+
 }
 @media screen and (max-width: 900px) { /*SMALLER TABLET/PORTRAIT TABLET ADJUSTMENTS*/
 .header ul {
@@ -432,8 +462,7 @@ p {
 }
 
 .content {
-  /*padding: 0% 10%;*/
-  top: 35%;
+  width: 100%;
 }
 
 .content h2 {
@@ -466,12 +495,12 @@ p {
   font-size: .9em;
 }
 
-.content {
-  top: 30%;
-}
-
 .content h2 {
   font-size: 1.25em;
+}
+
+.weatherflash {
+  margin: 13px 0px;
 }
 
 }

@@ -26,8 +26,9 @@ BusView.prototype = {
     var html = $("<div class='bus-content'>");
     console.log(bus.RouteID);
     html.append("<img class='more-icon' src='../public/images/icon-more.png'>").fadeIn(2000);
-    html.append("<h2><span class='busroute'>"+ this.bus.RouteID + "</span> " + this.bus.Minutes + " min</h2>").fadeIn(2000);
-    html.append("<h5><div class='bus-details'>"+ this.bus.DirectionText + "</div> " + "</h5>").slideDown(5000);
+    html.append("<h2><span class='busroute'>"+ this.bus.RouteID + "</span></h2>").fadeIn(2000);
+    html.append("<h4><span class='busroute'>"+ this.bus.Minutes + " min </span></h4>").fadeIn(2000);
+    html.append("<h5><div class='bus-details'>"+ this.bus.DirectionText + "</div> " + "</h5>").fadeIn(2000);
     return(html);
   }
 }
