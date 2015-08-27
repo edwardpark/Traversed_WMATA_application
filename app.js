@@ -10,7 +10,13 @@ var busStopsController = require("./controllers/busStops");
 app.get("/", function(req, res){
   res.render("index", {})
 });
+<<<<<<< HEAD
 
+=======
+app.get("/about", function(req, res){
+  res.render("about", {})
+});
+>>>>>>> about-page
 app.use("/", busStopsController);
 
 var request = require("request");
