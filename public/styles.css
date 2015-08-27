@@ -1,7 +1,22 @@
 /* MAIN */
+@font-face {
+ font-family: "Avenir";
+ src: url("http://ericaandersen.net/fonts/Avenir.ttc") format("ttc");
+ font-style: normal;
+ font-weight: normal;
+}
+
 #submit {
   width: 45px;
-  margin-top: 3.5em;
+  margin-top: 1.5em;
+}
+
+a {
+  color: white;
+}
+
+a:visited {
+  color: white;
 }
 
 li {
@@ -12,6 +27,7 @@ body {
   background-color: #031a3c;
   color: white;
   font-weight: lighter;
+  font-family: 'Avenir';
 }
 
 h1 {
@@ -24,16 +40,28 @@ h2 {
   margin-bottom: 1.5em;
 }
 
-.busroute {
-  margin-right: 2em;
+.container{
 }
 
+.busroute {
+  margin-right: 2em;
+  /*margin-bottom: 1.5em;*/
+}
+
+.bus-details {
+  margin-left: 7em;
+}
 /* ICONS */
 
 .more-icon {
-  width: 1em;
-  margin-right: 2em;
-  margin-left: 1em;
+  width: 1.75em;
+  padding: .25em 3em 0em 2em;
+  display: inline-block;
+  float: left;
+}
+
+.more-icon:hover {
+  cursor: pointer;
 }
 
 .footerimg {
@@ -44,7 +72,10 @@ h2 {
 }
 
 img.icon {
-    width: 20%;
+  width: 23% !important;
+  display: inline-block;
+  float: left;
+  padding: 10px 10px 0px;
 }
 
 .weather {
@@ -53,7 +84,22 @@ img.icon {
 }
 
 .weather p {
-    margin: 4px 10px;
+    margin: 8px 10px;
+}
+
+.weather-content h3 {
+  display: inline-block;
+  position: fixed;
+  padding: 5px;
+  font-weight: lighter;
+  color: white;
+}
+
+.weatherflash {
+  width: 100%;
+  padding: 10px;
+  background-color: #276fbf;
+  margin-bottom: 0;
 }
 
 /* NAVIGATION */
@@ -66,7 +112,6 @@ img.icon {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	position: fixed;
-	/*background: rgba(26, 26, 26, 0.4);*/
   background-color: #f0a202;
 	transition:background 0.5s ease ;
 	-webkit-transition:background 0.5s ease ;
@@ -128,9 +173,13 @@ ul.nav {
   padding-left: 0px;
   margin-top: 0px;
 }
+
 /* INPUT FORMS */
+
 input {
   text-align: center;
+  line-height: 2em;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(3, 26, 60) inset;
 }
 
 input[type=search] {
@@ -145,9 +194,6 @@ input:focus{
      outline: none;
 }
 
-input:-webkit-autofill {
-    color: ##031a3c !important;
-}
 /* MOBILE NAV */
 
 .mobileNavWrapper {
@@ -280,13 +326,19 @@ background-color: #51743E;
 .logoLink, .mainNav {
 	display: inline-block;
 }
+/* FAQ & ABOUT STYLES */
+.info {
+  padding: 0em 2em 7em 2em;
+  /*margin: 10px;*/
+  /*background-color: #F6F6F6;*/
+  /*color: #031a3c;*/
+}
+.info h2{
+  margin-bottom: 0px;
+}
 
 
 /*MEDIA QUERIES*/
-
-@media screen and (max-width: 1550px) { /*LARGER SCREEN ADJUSTMENTS*/
-
-}
 
 @media screen and (max-width: 1500px) { /*TYPICAL LAPTOP ADJUSTMENTS*/
 .header {
@@ -296,6 +348,7 @@ background-color: #51743E;
   margin: 3px 0 0 10px;
   width: 230px;
 }
+
 }
 
 @media screen and (max-width: 1210px) { /*TYPICAL LANDSCAPE TABLET ADJUSTMENTS*/
@@ -315,6 +368,14 @@ background-color: #51743E;
 
 .header ul li a {
 	height: 43px;
+}
+
+.weather p {
+    margin: 4px 10px;
+}
+
+img.icon {
+    width: 23%;
 }
 
 }

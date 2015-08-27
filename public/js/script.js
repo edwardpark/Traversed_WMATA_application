@@ -1,19 +1,16 @@
-// Navigation with jQuery
 var returnLatitude;
 var returnLongitude;
 
 $(document).on('click', "#menubuttonsvg", function() {
     $('.mobileNavWrapper').toggleClass('showNav')
-    console.log("click is working")
 });
 
 $(document).on('click', "#backsvg", function() {
   $('.mobileNavWrapper').removeClass('showNav')
-  console.log("close click is working")
 });
 
+////////////////Rendering bussesView based on the stop entered//////////////////
 $(document).on('click', "#submit", function(event){
-  console.log("search is working")
     event.preventDefault();
     $(".buses").html("");
     var stopId = $("#bus-search").val()
@@ -33,7 +30,7 @@ $(document).on('click', "#submit", function(event){
     }).fail(function(){ //closes ajax done function
       console.log("Oh noooo! It failed!");
     })
-
+////////////////////////////////////////////////////////////////////////////////
 
     // THIS IS FOR MATCHING USER VAL TO DATABASE VAL
     var request = "https://ancient-peak-2424.herokuapp.com/busstops/";
@@ -47,47 +44,52 @@ $(document).on('click', "#submit", function(event){
         for(var i = 0; i < response.length; i++){
           busStops.push(new BusStop(response[i]));
           var responseArray = response[i].StopID;
-          for (var index = 0; index < responseArray.length; ++index) {
-              if (responseArray === stopId) {
-                console.log("The entry matches ")
-                returnLatitude = response[index].Lat;
-                returnLongitude = response[index].Lon;
-              }
-              else {
-                console.log("Not working")
-              }
-              return {
-                returnLatitude:returnLatitude,
-                returnLongitude:returnLongitude
-              };
+
+          for (var index = 0; index < response.length; ++index) {
+            if (response[index].StopID === stopId) {
+              console.log("The entry matches ")
+              returnLatitude = response[index].Lat;
+              returnLongitude = response[index].Lon;
+              liftInnerLoop(returnLatitude, returnLongitude);
+              return//break => changed to return to accomodate additional return but might need to change back
+            }
+
+            return {
+              returnLatitude:returnLatitude,
+              returnLongitude:returnLongitude
+            };
           }//end of inner for loop
         }//end of outer for loop
       })
-      .then(function(latlon){
-          console.log(latlon);
+    .then(function(latlon){
           var urlWeather = "https://ancient-peak-2424.herokuapp.com/weather/" + returnLatitude + '/' + returnLongitude;
+
           $.ajax({
             url: urlWeather,
             type: "GET",
             dataType: "json"
-          }).done(function(response){
+          })
+          .done(function(response){
             latitude = response.latitude;
+
+            console.log(response);
+
             weather = new WeatherView(response)
             weather.render()//renders each bus number and arrival time.
+            weather.renderFlash()
 
-          }).fail(function(){ //closes ajax done function
+          })
+          .fail(function(){ //closes ajax done function
             console.log("Oh noooo! It failed!");
           })
 
 
-        }) //END OF .FAIL AND END OF AJAX CALL
+      }) //END OF .FAIL AND END OF AJAX CALL
+
     .fail(function(response){
         console.log("js failed to load");
       });
 
 
-
     $(".weather").html("");
-
-
 });//closes document.ready
