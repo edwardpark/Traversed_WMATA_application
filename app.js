@@ -6,10 +6,13 @@ app.use(bodyParser.json())
 app.use("/public", express.static(path.join(__dirname + "/public")));
 app.set("view engine", "hbs");
 var busStopsController = require("./controllers/busStops");
+
 app.get("/", function(req, res){
   res.render("index", {})
 });
+
 app.use("/", busStopsController);
+
 var request = require("request");
 ///security configuration for api keys////
 var configuration = require("./config/keys.json");
