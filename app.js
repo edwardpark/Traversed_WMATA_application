@@ -2,16 +2,6 @@ var express = require('express');
 var app = express();
 var path = require("path");
 var bodyParser = require("body-parser");
-var fs=require("fs");
-
-if(fs.existsSync("./config/key.js")){
-  var env = require("./config/key.js")
-
-}
-else {
-  var env = process.env;
-}
-
 app.use(bodyParser.json())
 app.use("/public", express.static(path.join(__dirname + "/public")));
 app.set("view engine", "hbs");
@@ -29,8 +19,8 @@ app.listen(process.env.PORT || 3000, function(){
 });
 
 //////////////////// API Call Keys///////////////////////
-var apiKey = env.apiKey;
-var darkSkyApiKey = env.darkSkyApiKey;
+var apiKey = process.env.apiKey;
+var darkSkyApiKey = process.env.darkSkyApiKey;
 ///////////////////////////////////////////////////////////
 var latitude;
 var longitude;
@@ -44,9 +34,10 @@ function options(id){
 // With stored matched ID, return latitude
 // With stored matched ID, return longitude
 function weather(lat,lon){
-  return  'https://api.forecast.io/forecast/' + darkSkyApiKey + '/' + latitude + ',' + longitude
+  return {
+  url: 'https://api.forecast.io/forecast/' + darkSkyApiKey + '/' + latitude + ',' + longitude
+  }
 };
-
 var getBusInfo = {
   busAPIInfo: "",
   rez: "",
@@ -63,7 +54,7 @@ app.get("/busstop/:id", function(req, nodeResponse){
       getBusInfo.sendJSON();
       console.log("app.js stored stop id =" + getBusInfo.id)
     }
-  });//end of request module//
+  });//end of request module
 });
 
 var getWeatherInfo = {  //insert values into object
@@ -77,16 +68,11 @@ var getWeatherInfo = {  //insert values into object
 app.get("/weather/:lat/:lon",function(req,nodeResponse){
    latitude = req.params.lat;
    longitude = req.params.lon;
-   var url  = weather(latitude,longitude)
-  request(url,function(error,response,body){  //make http call to weather API
-    console.log("StatusCode:!!!")
-    console.log(response.statusCode);
-    console.log("URL:!")
-    console.log(url)
+  request(weather(latitude,longitude),function(error,response,body){  //make http call to weather API
     if (!error && response.statusCode == 200){
       getWeatherInfo.rez = nodeResponse;
       getWeatherInfo.weatherInfo = JSON.parse(body);
-      nodeResponse.send(getWeatherInfo.weatherInfo);  //return response object "getWeatherinfo" to client side
+      getWeatherInfo.sendJSON();  //return response object "getWeatherinfo" to client side
     }
   });
 });//end of app.get("/weather”)

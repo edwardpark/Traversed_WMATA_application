@@ -17,7 +17,7 @@ $(document).on('click', "#submit", function(event){
     event.preventDefault();
     $(".buses").html("");
     var stopId = $("#bus-search").val()
-    var url = "http://localhost:3000/busstop/" + stopId;
+    var url = "https://ancient-peak-2424.herokuapp.com/busstop/" + stopId;
     $.ajax({
       url: url,
       type: "GET",
@@ -36,7 +36,7 @@ $(document).on('click', "#submit", function(event){
 
 
     // THIS IS FOR MATCHING USER VAL TO DATABASE VAL
-    var request = "http://localhost:3000/busstops/";
+    var request = "https://ancient-peak-2424.herokuapp.com/busstops/";
     $.ajax({
       url: request,
       type: "GET",
@@ -52,39 +52,37 @@ $(document).on('click', "#submit", function(event){
                 console.log("The entry matches ")
                 returnLatitude = response[index].Lat;
                 returnLongitude = response[index].Lon;
+                liftInnerLoop(returnLatitude, returnLongitude);
               }
               else {
                 console.log("Not working")
               }
-              return {
-                returnLatitude:returnLatitude,
-                returnLongitude:returnLongitude
-              };
+              return;
           }//end of inner for loop
         }//end of outer for loop
       })
-      .then(function(latlon){
-          console.log(latlon);
-          var urlWeather = "http://localhost:3000/weather/" + returnLatitude + '/' + returnLongitude;
-          $.ajax({
-            url: urlWeather,
-            type: "GET",
-            dataType: "json"
-          }).done(function(response){
-            latitude = response.latitude;
-            weather = new WeatherView(response)
-            weather.render()//renders each bus number and arrival time.
-
-          }).fail(function(){ //closes ajax done function
-            console.log("Oh noooo! It failed!");
-          })
-
-
-        }) //END OF .FAIL AND END OF AJAX CALL
     .fail(function(response){
         console.log("js failed to load");
-      });
+      }).then(function(){
+        var urlWeather = "https://ancient-peak-2424.herokuapp.com/weather/" + returnLatitude + '/' + returnLongitude;
+        $.ajax({
+          url: urlWeather,
+          type: "GET",
+          dataType: "json"
+        }).done(function(response){
+          console.log("script.js response latitude: " + response.latitude)
 
+          latitude = response.latitude;
+
+          weather = new WeatherView(response)
+          weather.render()//renders each bus number and arrival time.
+
+        }).fail(function(){ //closes ajax done function
+          console.log("Oh noooo! It failed!");
+        })
+
+
+      }); //END OF .FAIL AND END OF AJAX CALL
 
 
     $(".weather").html("");
