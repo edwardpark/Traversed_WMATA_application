@@ -60,13 +60,13 @@ $(document).on('click', "#submit", function(event){
           type: "GET",
           dataType: "json"
         }).done(function(response){
-          console.log("script.js response latitude: " + response.latitude)
-
           latitude = response.latitude;
+
           console.log(response);
+
           weather = new WeatherView(response)
           weather.render()//renders each bus number and arrival time.
-
+          weather.renderFlash()
         }).fail(function(){ //closes ajax done function
           console.log("Oh noooo! It failed!");
         })//END OF .FAIL AND END OF AJAX CALL
