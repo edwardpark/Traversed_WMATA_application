@@ -17,7 +17,7 @@ WeatherView.prototype = {
     var html = $("<div class='weather-content'>");
     console.log(weather.latitude);
     var weatherIcon = this.weather.currently.icon
-    var weatherTemp = this.weather.currently.temperature
+    var weatherTemp = parseInt(this.weather.currently.temperature)
     console.log("the weather icon is :" + weatherIcon);
     if (weatherIcon === "rain") {
       var wicon = "../../public/images/icon-rain.png"
@@ -39,7 +39,7 @@ WeatherView.prototype = {
     }
 
     html.append("<img src='" + wicon + "\' class=\"icon\"/>").fadeIn(2000);
-    html.append("<h3>" + weatherTemp + "°</h3>").fadeIn(2000);
+    html.append("<h3>" + weatherTemp + "°F</h3>").fadeIn(2000);
     return(html);
   }
 }
