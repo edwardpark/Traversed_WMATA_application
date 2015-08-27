@@ -1,6 +1,7 @@
 /* MAIN */
 #submit {
   width: 45px;
+  margin-top: 3.5em;
 }
 
 li {
@@ -10,13 +11,31 @@ li {
 body {
   background-color: #031a3c;
   color: white;
+  font-weight: lighter;
 }
 
 h1 {
   display: inline-block;
 }
 
+h2 {
+  font-weight: lighter;
+  font-size: 23px;
+  margin-bottom: 1.5em;
+}
+
+.busroute {
+  margin-right: 2em;
+}
+
 /* ICONS */
+
+.more-icon {
+  width: 1em;
+  margin-right: 2em;
+  margin-left: 1em;
+}
+
 .footerimg {
   width: 45px;
   display: block;
@@ -31,7 +50,6 @@ img.icon {
 .weather {
     display: inline-block;
     position: absolute;
-    width: 50%;
 }
 
 .weather p {
@@ -121,6 +139,7 @@ input[type=search] {
    color: white;
    border-bottom: 2px solid white;
    -webkit-appearance: none;
+   width: 80%;
  }
 input:focus{
      outline: none;
@@ -230,7 +249,7 @@ footer {
   display: block;
 }
 
-.button{
+.button {
   float: left;
   display: inline;
   position: relative;
@@ -241,15 +260,19 @@ footer {
   height: 100px;
   text-align: center;
 }
+
 #buttonno1{
 background-color: #f0a202;
 }
+
 #buttonno2{
 background-color: #fe5f55;
 }
+
 #buttonno3{
 background-color: #276fbf;
 }
+
 #buttonno4{
 background-color: #51743E;
 }
