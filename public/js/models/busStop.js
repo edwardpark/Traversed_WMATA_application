@@ -14,8 +14,8 @@ BusStop.fetch = function(){
     for(var i = 0; i < response.length; i++){
       busStops.push(new BusStop(response[i]));
     }
-    return busStops;
-    console.log("busStops is " + busStops)
+    return;
+    console.log("view stop id is " + response[i].StopID)
     })
   .fail(function(response){
       console.log("js failed to load");
