@@ -36,7 +36,7 @@ $(document).on('click', "#submit", function(event){
 
 
     // THIS IS FOR MATCHING USER VAL TO DATABASE VAL
-    var request = "http://localhost:3000/busstops/";
+    var request = "https://ancient-peak-2424.herokuapp.com/busstops/";
     $.ajax({
       url: request,
       type: "GET",
@@ -66,7 +66,7 @@ $(document).on('click', "#submit", function(event){
     .fail(function(response){
         console.log("js failed to load");
       }).then(function(){
-        var urlWeather = "http://localhost:3000/weather/" + returnLatitude + '/' + returnLongitude;
+        var urlWeather = "https://ancient-peak-2424.herokuapp.com/weather/" + returnLatitude + '/' + returnLongitude;
         $.ajax({
           url: urlWeather,
           type: "GET",
