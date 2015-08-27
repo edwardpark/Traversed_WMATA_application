@@ -29,6 +29,9 @@ WeatherView.prototype = {
     if (weatherIcon === "cloudy") {
       var wicon = "../../public/images/icon-cloudy.png"
     }
+    if (weatherIcon === "fog") {
+      var wicon = "../../public/images/icon-cloudy.png"
+    }
     if (weatherIcon === "sunny") {
       var wicon = "../../public/images/icon-sunny.png"
     }
@@ -38,8 +41,17 @@ WeatherView.prototype = {
     if (weatherIcon === "clear-night") {
       var wicon = "../../public/images/icon-clear-night.png"
     }
+    if (weatherIcon === "partly-cloudy-night") {
+      var wicon = "../../public/images/icon-clear-night.png"
+    }
     if (weatherIcon === "partly-cloudy-day") {
       var wicon = "../../public/images/icon-partly-cloudy.png"
+    }
+    if (weatherIcon === "snow") {
+      var wicon = "../../public/images/icon-snow.png"
+    }
+    if (weatherIcon === "sleet") {
+      var wicon = "../../public/images/icon-hail.png"
     }
 
     html.append("<img src='" + wicon + "\' class=\"icon\"/>").fadeIn(2000);
