@@ -1,10 +1,7 @@
-// Navigation with jQuery
 var returnLatitude;
 var returnLongitude;
 
-
-
-
+// Navigation with jQuery
 $(document).on('click', "#menubuttonsvg", function() {
     $('.mobileNavWrapper').toggleClass('showNav')
     console.log("click is working")
