@@ -48,6 +48,7 @@ $(document).on('click', "#submit", function(event){
             returnLatitude = response[index].Lat;
             returnLongitude = response[index].Lon;
             liftInnerLoop(returnLatitude, returnLongitude);
+            break
           }
         }//end of inner for loop
       })
