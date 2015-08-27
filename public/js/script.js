@@ -38,14 +38,8 @@ $(document).on('click', "#submit", function(event){
     })
 
 
-<<<<<<< HEAD
-
-    $(".weather").html("");
-    var urlWeather = "https://ancient-peak-2424.herokuapp.com/weather/";
-=======
     // THIS IS FOR MATCHING USER VAL TO DATABASE VAL
     var request = "http://localhost:3000/busstops/";
->>>>>>> 2294ffc4f369182a0e344d135ab4e1f1a73c1aad
     $.ajax({
       url: request,
       type: "GET",
@@ -102,23 +96,6 @@ $(document).on('click', "#submit", function(event){
       }
 
     $(".weather").html("");
-
-    // var urlWeather = "http://localhost:3000/weather/" + returnLatitude + '/' + returnLongitude;
-    // $.ajax({
-    //   url: urlWeather,
-    //   type: "GET",
-    //   dataType: "json"
-    // }).done(function(response){
-    //   console.log("script.js response latitude: " + response.latitude)
-    //
-    //   latitude = response.latitude;
-    //
-    //   weather = new WeatherView(response)
-    //   weather.render()//renders each bus number and arrival time.
-    //
-    // }).fail(function(){ //closes ajax done function
-    //   console.log("Oh noooo! It failed!");
-    // })
 
 
 });//closes document.ready
