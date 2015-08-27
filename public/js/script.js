@@ -17,7 +17,7 @@ $(document).on('click', "#submit", function(event){
     event.preventDefault();
     $(".buses").html("");
     var stopId = $("#bus-search").val()
-    var url = "http://localhost:3000/busstop/" + stopId;
+    var url = "https://ancient-peak-2424.herokuapp.com/busstop/" + stopId;
     $.ajax({
       url: url,
       type: "GET",
@@ -36,7 +36,7 @@ $(document).on('click', "#submit", function(event){
 
 
     // THIS IS FOR MATCHING USER VAL TO DATABASE VAL
-    var request = "http://localhost:3000/busstops/";
+    var request = "https://ancient-peak-2424.herokuapp.com/busstops/";
     $.ajax({
       url: request,
       type: "GET",
@@ -65,7 +65,7 @@ $(document).on('click', "#submit", function(event){
       })
       .then(function(latlon){
           console.log(latlon);
-          var urlWeather = "http://localhost:3000/weather/" + returnLatitude + '/' + returnLongitude;
+          var urlWeather = "https://ancient-peak-2424.herokuapp.com/weather/" + returnLatitude + '/' + returnLongitude;
           $.ajax({
             url: urlWeather,
             type: "GET",
