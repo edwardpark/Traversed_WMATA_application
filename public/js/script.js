@@ -63,17 +63,15 @@ $(document).on('click', "#submit", function(event){
       })
     .fail(function(response){
         console.log("js failed to load");
-      }).then(function(){
+      })
+    .then(function(){
         var urlWeather = "https://ancient-peak-2424.herokuapp.com/weather/" + returnLatitude + '/' + returnLongitude;
         $.ajax({
           url: urlWeather,
           type: "GET",
           dataType: "json"
         }).done(function(response){
-          console.log("script.js response latitude: " + response.latitude)
-
           latitude = response.latitude;
-
           weather = new WeatherView(response)
           weather.render()//renders each bus number and arrival time.
 

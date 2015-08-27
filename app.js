@@ -35,7 +35,7 @@ function options(id){
 // With stored matched ID, return longitude
 function weather(lat,lon){
   return {
-  url: 'https://api.forecast.io/forecast/' + darkSkyApiKey + '/' + latitude + ',' + longitude
+  url: 'https://api.forecast.io/forecast/' + darkSkyApiKey + '/' + latitude + '/' + longitude
   }
 };
 var getBusInfo = {
