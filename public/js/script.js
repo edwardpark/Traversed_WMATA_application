@@ -4,16 +4,14 @@ var returnLongitude;
 // Navigation with jQuery
 $(document).on('click', "#menubuttonsvg", function() {
     $('.mobileNavWrapper').toggleClass('showNav')
-    console.log("click is working")
 });
 
 $(document).on('click', "#backsvg", function() {
   $('.mobileNavWrapper').removeClass('showNav')
-  console.log("close click is working")
 });
 
+////////////////Rendering bussesView based on the stop entered//////////////////
 $(document).on('click', "#submit", function(event){
-  console.log("search is working")
     event.preventDefault();
     $(".buses").html("");
     var stopId = $("#bus-search").val()
@@ -33,7 +31,7 @@ $(document).on('click', "#submit", function(event){
     }).fail(function(){ //closes ajax done function
       console.log("Oh noooo! It failed!");
     })
-
+////////////////////////////////////////////////////////////////////////////////
 
     // THIS IS FOR MATCHING USER VAL TO DATABASE VAL
     var request = "http://localhost:3000/busstops/";
@@ -71,15 +69,17 @@ $(document).on('click', "#submit", function(event){
           dataType: "json"
         }).done(function(response){
           latitude = response.latitude;
+
+          console.log(response);
+
           weather = new WeatherView(response)
           weather.render()//renders each bus number and arrival time.
           weather.renderFlash()
         }).fail(function(){ //closes ajax done function
           console.log("Oh noooo! It failed!");
-        })
+        })//END OF .FAIL AND END OF AJAX CALL
 
-
-      }); //END OF .FAIL AND END OF AJAX CALL
+      });//closes then
 
       function liftInnerLoop(lat,lon){
         returnLatitude = lat;
@@ -88,23 +88,4 @@ $(document).on('click', "#submit", function(event){
       }
 
     $(".weather").html("");
-
-    // var urlWeather = "http://localhost:3000/weather/" + returnLatitude + '/' + returnLongitude;
-    // $.ajax({
-    //   url: urlWeather,
-    //   type: "GET",
-    //   dataType: "json"
-    // }).done(function(response){
-    //   console.log("script.js response latitude: " + response.latitude)
-    //
-    //   latitude = response.latitude;
-    //
-    //   weather = new WeatherView(response)
-    //   weather.render()//renders each bus number and arrival time.
-    //
-    // }).fail(function(){ //closes ajax done function
-    //   console.log("Oh noooo! It failed!");
-    // })
-
-
 });//closes document.ready
