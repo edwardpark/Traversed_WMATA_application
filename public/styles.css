@@ -32,6 +32,10 @@ h2 {
   margin-bottom: 1.5em;
 }
 
+.container{
+  padding: 0em 2em 7em 2em;
+}
+
 .busroute {
   margin-right: 2em;
 }
