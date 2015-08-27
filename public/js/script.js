@@ -57,30 +57,35 @@ $(document).on('click', "#submit", function(event){
               else {
                 console.log("Not working")
               }
-              return;
+              return {
+                returnLatitude:returnLatitude,
+                returnLongitude:returnLongitude
+              };
           }//end of inner for loop
         }//end of outer for loop
       })
+      .then(function(latlon){
+          console.log(latlon);
+          var urlWeather = "https://ancient-peak-2424.herokuapp.com/weather/" + returnLatitude + '/' + returnLongitude;
+          $.ajax({
+            url: urlWeather,
+            type: "GET",
+            dataType: "json"
+          }).done(function(response){
+            latitude = response.latitude;
+            weather = new WeatherView(response)
+            weather.render()//renders each bus number and arrival time.
+
+          }).fail(function(){ //closes ajax done function
+            console.log("Oh noooo! It failed!");
+          })
+
+
+        }) //END OF .FAIL AND END OF AJAX CALL
     .fail(function(response){
         console.log("js failed to load");
-      })
-    .then(function(){
-        var urlWeather = "https://ancient-peak-2424.herokuapp.com/weather/" + returnLatitude + '/' + returnLongitude;
-        $.ajax({
-          url: urlWeather,
-          type: "GET",
-          dataType: "json"
-        }).done(function(response){
-          latitude = response.latitude;
-          weather = new WeatherView(response)
-          weather.render()//renders each bus number and arrival time.
+      });
 
-        }).fail(function(){ //closes ajax done function
-          console.log("Oh noooo! It failed!");
-        })
-
-
-      }); //END OF .FAIL AND END OF AJAX CALL
 
 
     $(".weather").html("");
