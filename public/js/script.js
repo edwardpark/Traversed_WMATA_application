@@ -41,23 +41,15 @@ $(document).on('click', "#submit", function(event){
       dataType: "json"
     })
     .done(function(response) {
-      var busStops = [];
-        for(var i = 0; i < response.length; i++){
-          busStops.push(new BusStop(response[i]));
-          var responseArray = response[i].StopID;
-          for (var index = 0; index < responseArray.length; ++index) {
-              if (responseArray === stopId) {
-                console.log("The entry matches ")
-                returnLatitude = response[index].Lat;
-                returnLongitude = response[index].Lon;
-                liftInnerLoop(returnLatitude, returnLongitude);
-              }
-              else {
-                console.log("Not working")
-              }
-              return;
-          }//end of inner for loop
-        }//end of outer for loop
+      console.log(response[1].StopID);
+        for (var index = 0; index < response.length; ++index) {
+          if (response[index].StopID === stopId) {
+            console.log("The entry matches ")
+            returnLatitude = response[index].Lat;
+            returnLongitude = response[index].Lon;
+            liftInnerLoop(returnLatitude, returnLongitude);
+          }
+        }//end of inner for loop
       })
     .fail(function(response){
         console.log("js failed to load");
