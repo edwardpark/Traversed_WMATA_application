@@ -462,8 +462,7 @@ p {
 }
 
 .content {
-  /*padding: 0% 10%;*/
-  top: 35%;
+  width: 100%;
 }
 
 .content h2 {
@@ -494,10 +493,6 @@ footer {
 
 p {
   font-size: .9em;
-}
-
-.content {
-  top: 30%;
 }
 
 .content h2 {
