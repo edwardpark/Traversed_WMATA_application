@@ -54,7 +54,7 @@ app.get("/busstop/:id", function(req, nodeResponse){
       getBusInfo.sendJSON();
       console.log("app.js stored stop id =" + getBusInfo.id)
     }
-  });//end of request module
+  });//end of request module//
 });
 
 var getWeatherInfo = {  //insert values into object
