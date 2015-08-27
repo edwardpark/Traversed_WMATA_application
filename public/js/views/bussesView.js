@@ -41,7 +41,6 @@ BusView.prototype = {
     html.append("<img class='more-icon' src='../public/images/icon-more.png'>").fadeIn(2000);
     html.append("<h2><span class='busroute'>"+ this.bus.RouteID + "</span> " + this.bus.Minutes+" min</h2>").fadeIn(2000);
     html.append("<h2> <img class='more-icon' src='../public/images/icon-more.png'> <span class='busroute'>"+ this.bus.RouteID + "</span> " + this.bus.Minutes+" min</h2>").fadeIn(2000);
-
     return(html);
   }
 }
