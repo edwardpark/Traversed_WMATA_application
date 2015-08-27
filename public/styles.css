@@ -17,6 +17,7 @@ h1 {
 }
 
 /* ICONS */
+
 .footerimg {
   width: 45px;
   display: block;
@@ -31,7 +32,6 @@ img.icon {
 .weather {
     display: inline-block;
     position: absolute;
-    width: 50%;
 }
 
 .weather p {
