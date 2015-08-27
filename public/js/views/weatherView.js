@@ -39,8 +39,7 @@ WeatherView.prototype = {
       var wicon = "../../public/images/icon-thunderstorms.png"
     }
 
-    html.append("<img src='" + wicon + "\' class=\"icon\"/>")
-
+    html.append("<img src='" + wicon + "\' class=\"icon\"/>").fadeIn(2000);
     return(html);
   }
 }
