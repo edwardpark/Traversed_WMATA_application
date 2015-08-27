@@ -8,7 +8,15 @@
 
 #submit {
   width: 45px;
-  margin-top: 3.5em;
+  margin-top: 1.5em;
+}
+
+a {
+  color: white;
+}
+
+a:visited {
+  color: white;
 }
 
 li {
@@ -33,13 +41,16 @@ h2 {
 }
 
 .container{
-  padding: 0em 2em 7em 2em;
 }
 
 .busroute {
   margin-right: 2em;
+  /*margin-bottom: 1.5em;*/
 }
 
+.bus-details {
+  margin-left: 7em;
+}
 /* ICONS */
 
 .more-icon {
@@ -47,6 +58,10 @@ h2 {
   padding: .25em 3em 0em 2em;
   display: inline-block;
   float: left;
+}
+
+.more-icon:hover {
+  cursor: pointer;
 }
 
 .footerimg {
@@ -80,6 +95,13 @@ img.icon {
   color: white;
 }
 
+.weatherflash {
+  width: 100%;
+  padding: 10px;
+  background-color: #276fbf;
+  margin-bottom: 0;
+}
+
 /* NAVIGATION */
 
 .header-wrapper {
@@ -90,7 +112,6 @@ img.icon {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	position: fixed;
-	/*background: rgba(26, 26, 26, 0.4);*/
   background-color: #f0a202;
 	transition:background 0.5s ease ;
 	-webkit-transition:background 0.5s ease ;
@@ -304,6 +325,16 @@ background-color: #51743E;
 
 .logoLink, .mainNav {
 	display: inline-block;
+}
+/* FAQ & ABOUT STYLES */
+.info {
+  padding: 0em 2em 7em 2em;
+  /*margin: 10px;*/
+  /*background-color: #F6F6F6;*/
+  /*color: #031a3c;*/
+}
+.info h2{
+  margin-bottom: 0px;
 }
 
 
