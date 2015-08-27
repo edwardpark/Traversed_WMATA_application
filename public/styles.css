@@ -56,6 +56,12 @@ img.icon {
     margin: 4px 10px;
 }
 
+.weatherflash {
+  width: 100%;
+  padding: 10px;
+  background-color: green;
+}
+
 /* NAVIGATION */
 
 .header-wrapper {
