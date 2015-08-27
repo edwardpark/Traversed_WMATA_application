@@ -20,16 +20,19 @@ WeatherView.prototype = {
   weatherTemplate: function(weather){
     var html = $("<div class='weather-content'>");
     console.log(weather.latitude);
-    var weatherIcon = this.weather.currently.icon // This is rain
+    var weatherIcon = this.weather.currently.icon
     var weatherTemp = this.weather.currently.temperature
-    console.log(weatherIcon);
+    console.log("the weather icon is :" + weatherIcon);
     if (weatherIcon === "rain") {
       var wicon = "../../public/images/icon-rain.png"
     }
-    if ( (weatherIcon === "cloudy") || (weatherIcon === "fog") ) {
+    if (weatherIcon === "cloudy") {
       var wicon = "../../public/images/icon-cloudy.png"
     }
-    if ( (weatherIcon === "sunny") || (weatherIcon === "clear-day") ) {
+    if (weatherIcon === "sunny") {
+      var wicon = "../../public/images/icon-sunny.png"
+    }
+    if (weatherIcon === "clear-day") {
       var wicon = "../../public/images/icon-sunny.png"
     }
     if (weatherIcon === "clear-night") {
@@ -37,9 +40,6 @@ WeatherView.prototype = {
     }
     if (weatherIcon === "partly-cloudy-day") {
       var wicon = "../../public/images/icon-partly-cloudy.png"
-    }
-    else {
-      var wicon = "../../public/images/icon-thunderstorms.png"
     }
 
     html.append("<img src='" + wicon + "\' class=\"icon\"/>").fadeIn(2000);
