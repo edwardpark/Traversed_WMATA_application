@@ -29,6 +29,12 @@ WeatherView.prototype = {
     if (weatherIcon === "cloudy") {
       var wicon = "../../public/images/icon-cloudy.png"
     }
+    if (weatherIcon === "sunny") {
+      var wicon = "../../public/images/icon-sunny.png"
+    }
+    if (weatherIcon === "clear-night") {
+      var wicon = "../../public/images/icon-clear-night.png"
+    }
     else {
       var wicon = "../../public/images/icon-thunderstorms.png"
     }
