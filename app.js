@@ -7,7 +7,6 @@ var fs=require("fs");
 
 if(fs.existsSync("./config/key.js")){
   var env = require("./config/key.js")
-
 }
 else {
   var env = process.env;
