@@ -35,6 +35,9 @@ WeatherView.prototype = {
     if (weatherIcon === "clear-night") {
       var wicon = "../../public/images/icon-clear-night.png"
     }
+    if (weatherIcon === "clear-day") {
+      var wicon = "../../public/images/icon-sunny.png"
+    }
     else {
       var wicon = "../../public/images/icon-thunderstorms.png"
     }
