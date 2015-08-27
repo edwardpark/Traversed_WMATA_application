@@ -357,6 +357,42 @@ background-color: #51743E;
 .info h2{
   margin-bottom: 0px;
 }
+/*sidebar*/
+.content {
+  width: 75%;
+  display: inline-block;
+  float: left;
+}
+
+.sidebar {
+  width: 25%;
+  display: inline-block;
+  margin-top: 4em;
+  position: fixed;
+  text-align: center;
+}
+
+.sidebar a {
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.sidebutton {
+  height: 23vh;
+}
+
+footer {
+  display: none;
+}
+
+.header-wrapper {
+  background-color: #39393A;
+}
+.footerimg {
+  padding-top: 20px;
+  width: 100px;
+}
+
 
 
 /*MEDIA QUERIES*/
@@ -369,7 +405,6 @@ background-color: #51743E;
   margin: 3px 0 0 10px;
   width: 230px;
 }
-
 }
 
 @media screen and (max-width: 1210px) { /*TYPICAL LANDSCAPE TABLET ADJUSTMENTS*/
@@ -414,6 +449,10 @@ img.icon {
 	display: none;
 }
 
+.header-wrapper {
+  background-color: #f0a202;
+}
+
 .mobileNavWrapper, #menubuttonsvg, #backsvg {
   display: inline-block;
 }
@@ -423,12 +462,27 @@ p {
 }
 
 .content {
-  padding: 0% 10%;
+  /*padding: 0% 10%;*/
   top: 35%;
 }
 
 .content h2 {
   font-size: 1.5em;
+}
+
+.sidebar {
+  display: none;
+}
+
+footer {
+  display: block;
+}
+
+.footerimg {
+  width: 45px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 4px;
 }
 
 }
@@ -443,7 +497,6 @@ p {
 }
 
 .content {
-  padding: 0% 10%;
   top: 30%;
 }
 
