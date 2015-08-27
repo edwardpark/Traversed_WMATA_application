@@ -2,9 +2,6 @@
 var returnLatitude;
 var returnLongitude;
 
-
-
-
 $(document).on('click', "#menubuttonsvg", function() {
     $('.mobileNavWrapper').toggleClass('showNav')
     console.log("click is working")
