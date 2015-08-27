@@ -21,12 +21,15 @@ $(document).ready(function(){
       }
         $("h2").on("click", function(event){
           event.preventDefault();
+          $(event.target).toggleClass("show")
           for(var i=0; i<predictions.length; i++){
             if($(event.target).html() == predictions[i].RouteID){
-              console.log($(this).html());
               console.log(i);
               bus = new BusView(predictions[i])
               bus.render()//renders each bus number and arrival time.
+            }
+            else {
+              console.log("I'm else");
             }
           }
         })
