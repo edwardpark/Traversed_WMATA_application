@@ -366,19 +366,31 @@ background-color: #51743E;
 
 .sidebar {
   width: 25%;
-  display: inline-block;
+  max-width: 20vw;
+  display: block;
   margin-top: 4em;
   position: fixed;
+  right: 0;
   text-align: center;
 }
 
 .sidebar a {
     text-decoration: none;
-    font-size: 25px;
+    font-size: 2.5vh;
+    display: block;
+    height: 24vh;
+    position: relative;
 }
 
 .sidebutton {
-  height: 23vh;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  left: 50%;
+}
+.sidebutton img{
+  width: 8vw;
+  max-width: 220px;
 }
 
 footer {
@@ -388,9 +400,19 @@ footer {
 .header-wrapper {
   background-color: #39393A;
 }
-.footerimg {
-  padding-top: 20px;
-  width: 100px;
+
+.footer-link{
+  display: block;
+  position: relative;
+  width: 25vw;
+  float: left;
+}
+.footer-link .button{
+  display: block;
+  padding: 0;
+  text-align: center;
+  top: 50%;
+  width: 100%;
 }
 
 
