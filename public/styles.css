@@ -36,7 +36,6 @@ h1 {
 
 h2 {
   font-weight: lighter;
-  font-size: 23px;
   margin-bottom: 1.5em;
 }
 
@@ -46,10 +45,6 @@ h2 {
 .busroute {
   margin-right: 0 1em;
   /*margin-bottom: 1.5em;*/
-}
-
-.bus-details {
-  margin-left: 7em;
 }
 /* ICONS */
 
@@ -100,6 +95,31 @@ img.icon {
   padding: 10px;
   background-color: #276fbf;
   margin-bottom: 0;
+}
+
+.bus-icon {
+  margin-bottom: -17px;
+}
+
+/* RETURNED CONTENT */
+
+.bus-content h2, .bus-content h4 {
+  margin-bottom: 0;
+}
+.bus-content h2 {
+  display: inline-block;
+}
+
+.bus-content h4 {
+  display: inline-block;
+  font-weight: lighter;
+  font-size: 23px;
+}
+
+.bus-details {
+  margin-left: 9.25em;
+  font-weight: 500;
+  font-size: 1.25em;
 }
 
 /* NAVIGATION */
@@ -180,6 +200,7 @@ input {
   text-align: center;
   line-height: 2em;
   -webkit-box-shadow: 0 0 0px 1000px rgb(3, 26, 60) inset;
+  -webkit-text-fill-color: #fff;
 }
 
 input[type=search] {
@@ -336,6 +357,42 @@ background-color: #51743E;
 .info h2{
   margin-bottom: 0px;
 }
+/*sidebar*/
+.content {
+  width: 75%;
+  display: inline-block;
+  float: left;
+}
+
+.sidebar {
+  width: 25%;
+  display: inline-block;
+  margin-top: 4em;
+  position: fixed;
+  text-align: center;
+}
+
+.sidebar a {
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.sidebutton {
+  height: 23vh;
+}
+
+footer {
+  display: none;
+}
+
+.header-wrapper {
+  background-color: #39393A;
+}
+.footerimg {
+  padding-top: 20px;
+  width: 100px;
+}
+
 
 
 /*MEDIA QUERIES*/
@@ -348,7 +405,6 @@ background-color: #51743E;
   margin: 3px 0 0 10px;
   width: 230px;
 }
-
 }
 
 @media screen and (max-width: 1210px) { /*TYPICAL LANDSCAPE TABLET ADJUSTMENTS*/
@@ -378,10 +434,23 @@ img.icon {
     width: 23%;
 }
 
+#menubuttonsvg:hover, #backsvg:hover {
+	background: #1E507D;
+	padding: 0px 0px 6px 13px;
+}
+
+.weatherflash {
+  margin: 10px 0px;
+}
+
 }
 @media screen and (max-width: 900px) { /*SMALLER TABLET/PORTRAIT TABLET ADJUSTMENTS*/
 .header ul {
 	display: none;
+}
+
+.header-wrapper {
+  background-color: #f0a202;
 }
 
 .mobileNavWrapper, #menubuttonsvg, #backsvg {
@@ -393,12 +462,26 @@ p {
 }
 
 .content {
-  padding: 0% 10%;
-  top: 35%;
+  width: 100%;
 }
 
 .content h2 {
   font-size: 1.5em;
+}
+
+.sidebar {
+  display: none;
+}
+
+footer {
+  display: block;
+}
+
+.footerimg {
+  width: 45px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 4px;
 }
 
 }
@@ -412,13 +495,12 @@ p {
   font-size: .9em;
 }
 
-.content {
-  padding: 0% 10%;
-  top: 30%;
-}
-
 .content h2 {
   font-size: 1.25em;
+}
+
+.weatherflash {
+  margin: 13px 0px;
 }
 
 }
