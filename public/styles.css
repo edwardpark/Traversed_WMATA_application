@@ -44,7 +44,7 @@ h2 {
 }
 
 .busroute {
-  margin-right: 2em;
+  margin-right: 0 1em;
   /*margin-bottom: 1.5em;*/
 }
 
@@ -55,7 +55,7 @@ h2 {
 
 .more-icon {
   width: 1.75em;
-  padding: .25em 3em 0em 2em;
+  padding: .25em 2em 0em 2em;
   display: inline-block;
   float: left;
 }
