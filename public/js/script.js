@@ -14,7 +14,7 @@ $(document).on('click', "#submit", function(event){
     event.preventDefault();
     $(".buses").html("");
     var stopId = $("#bus-search").val()
-    var url = "https://ancient-peak-2424.herokuapp.com/busstop/" + stopId;
+    var url = "http://localhost:3000/busstop/" + stopId;
     $.ajax({
       url: url,
       type: "GET",
@@ -31,37 +31,31 @@ $(document).on('click', "#submit", function(event){
       console.log("Oh noooo! It failed!");
     })
 ////////////////////////////////////////////////////////////////////////////////
-
-    // THIS IS FOR MATCHING USER VAL TO DATABASE VAL
-    var request = "https://ancient-peak-2424.herokuapp.com/busstops/";
+   // THIS IS FOR MATCHING USER VAL TO DATABASE VAL
+    var request = "http://localhost:3000/busstops/";
     $.ajax({
       url: request,
       type: "GET",
       dataType: "json"
     })
     .done(function(response) {
-      var busStops = [];
-        for(var i = 0; i < response.length; i++){
-          busStops.push(new BusStop(response[i]));
-          var responseArray = response[i].StopID;
+      console.log(response.length);
+      for (var index = 0; index < response.length; index++) {
+        if (response[index].StopID === stopId) {
+          console.log("The entry matches ")
+          returnLatitude = response[index].Lat;
+          returnLongitude = response[index].Lon;
+          break
+        }
+      }//end of inner for loop
+      return {
+        returnLatitude:returnLatitude,
+        returnLongitude:returnLongitude
+      };
+    })
 
-          for (var index = 0; index < response.length; ++index) {
-            if (response[index].StopID === stopId) {
-              console.log("The entry matches ")
-              returnLatitude = response[index].Lat;
-              returnLongitude = response[index].Lon;
-              return//break => changed to return to accomodate additional return but might need to change back
-            }
-
-            return {
-              returnLatitude:returnLatitude,
-              returnLongitude:returnLongitude
-            };
-          }//end of inner for loop
-        }//end of outer for loop
-      })
     .then(function(latlon){
-          var urlWeather = "https://ancient-peak-2424.herokuapp.com/weather/" + returnLatitude + '/' + returnLongitude;
+          var urlWeather = "http://localhost:3000/weather/" + returnLatitude + '/' + returnLongitude;
 
           $.ajax({
             url: urlWeather,
@@ -72,6 +66,7 @@ $(document).on('click', "#submit", function(event){
             latitude = response.latitude;
 
             console.log(response);
+            console.log("latlon:"+latlon)
 
             weather = new WeatherView(response)
             weather.render()//renders each bus number and arrival time.
