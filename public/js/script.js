@@ -39,22 +39,17 @@ $(document).on('click', "#submit", function(event){
       dataType: "json"
     })
     .done(function(response) {
-      console.log(response.length);
-      for (var index = 0; index < response.length; index++) {
-        if (response[index].StopID === stopId) {
-          console.log("The entry matches ")
-          returnLatitude = response[index].Lat;
-          returnLongitude = response[index].Lon;
-          break
-        }
-      }//end of inner for loop
+
+      returnLatitude = response[0].Lat;
+      returnLongitude = response[0].Lon;
+
       return {
         returnLatitude:returnLatitude,
         returnLongitude:returnLongitude
       };
     })
 
-    .then(function(latlon){
+    .then(function(returnedLatAndLon){
           var urlWeather = "http://localhost:3000/weather/" + returnLatitude + '/' + returnLongitude;
 
           $.ajax({
@@ -63,10 +58,6 @@ $(document).on('click', "#submit", function(event){
             dataType: "json"
           })
           .done(function(response){
-            latitude = response.latitude;
-
-            console.log(response);
-            console.log("latlon:"+latlon)
 
             weather = new WeatherView(response)
             weather.render()//renders each bus number and arrival time.
