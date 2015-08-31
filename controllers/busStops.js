@@ -7,8 +7,10 @@ function error(response, message){
   response.json({error: message})
 }
 
-router.get("/busstops", function(req, res){
-  BusStop.findAll().then(function(busStops){
+router.get("/busstops/:id", function(req, res){
+  BusStop.findAll({
+    where: { StopID: req.params.id }
+  }).then(function(busStops){
     res.json(busStops);
   });
 });
