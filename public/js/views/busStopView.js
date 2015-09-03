@@ -9,6 +9,8 @@ var BusStopView = function(busStop){
 
 BusStopView.prototype = {
   render: function(){
+    // since there are no callbacks, you don't need the self=this statement
+    // (it's not wrong per se, but convention is to only use it when you need it)
     var self = this;
 
     self.$el.html(self.busStopTemplate(self.busStop));

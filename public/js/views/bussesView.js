@@ -25,6 +25,9 @@ BusView.prototype = {
   busTemplate: function(bus){
     var html = $("<div class='bus-content'>");
     console.log(bus.RouteID);
+
+    // same note as in weatherView... best to just fade in the whole element
+    // when you render it.
     html.append("<img class='more-icon' src='../public/images/icon-more.png'>").fadeIn(2000);
     html.append("<h2><span class='busroute'>"+ this.bus.RouteID + "</span></h2>").fadeIn(2000);
     html.append("<h4><span class='busroute'>"+ this.bus.Minutes + " min </span></h4>").fadeIn(2000);
