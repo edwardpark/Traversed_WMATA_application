@@ -5,7 +5,7 @@ Making a more intuitive bus app for Washington, DC system.
 You can find the deployed app here: https://ancient-peak-2424.herokuapp.com/
 
 ##How To Contribute
-Fork this repository and clone the fork onto your local machine. Make your changes, push them to your fork. Once you're safisfied with those changes, submit a pull request to this repository. Please leave detailed comments on what changes you made and why. If approved, your changes will be merged to this repo and pushed to heroku. 
+Fork this repository and clone the fork onto your local machine. Make your changes, push them to your fork. Once you're safisfied with those changes, submit a pull request to this repository. Please leave detailed comments on what changes you made and why. If approved, your changes will be merged to this repo and pushed to heroku.
 
 ##User Stories
 * As a bus rider I should be able to search arriving busses by my stop.
@@ -14,12 +14,17 @@ Fork this repository and clone the fork onto your local machine. Make your chang
 * As a bus rider I should be able to initiate a new search.
 
 ##Early Mockups
+<!-- these images would be better placed in the planning folder, rather than public/resources -->
 ![alt tag](https://github.com/edwardpark/WDI_Project3_API/blob/master/public/resources/BetterBusApp.png)
 ![alt tag](https://github.com/edwardpark/WDI_Project3_API/blob/master/public/resources/BetterBusApp2.png)
 # WDI Project 3 API
 > Group project for the General Assembly Web Immersive
 ##MVP Heroku Deployment
 https://ancient-peak-2424.herokuapp.com/#
+
+
+<!-- I'd probably take this part out of the public readme, since it's related
+to the project requirement, not your work itself  -->
 #### Technical Requirements
 
 ##### Back-end

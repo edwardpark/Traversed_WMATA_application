@@ -10,6 +10,7 @@
     <script src="/public/js/views/busStopView.js"></script>
 
     <script src="/public/js/script.js"></script>
+    <!-- you're loading two versions of jQuery... why? -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -60,25 +61,25 @@
     {{{ body }}}
   </div> <!-- End Content -->
   <div class="sidebar">
-    <a id="buttonno1" href="/"> 
+    <a id="buttonno1" href="/">
       <div class="sidebutton">
         <img src="../../public/images/icon-home.png">
         home
       </div>
     </a>
-    <a id="buttonno2" href="https://twitter.com/wmata" target="_blank"> 
+    <a id="buttonno2" href="https://twitter.com/wmata" target="_blank">
       <div class="sidebutton">
         <img src="../../public/images/icon-twitter.png">
         tweet us
       </div>
     </a>
-    <a id="buttonno3" href="tel:202-637-7000" target="_blank"> 
+    <a id="buttonno3" href="tel:202-637-7000" target="_blank">
       <div class="sidebutton">
         <img src="../../public/images/icon-phone.png">
         help?
       </div>
     </a>
-    <a id="buttonno4" href="https://smartrip.wmata.com/Account/AccountLogin.aspx" target="_blank"> 
+    <a id="buttonno4" href="https://smartrip.wmata.com/Account/AccountLogin.aspx" target="_blank">
       <div class="sidebutton">
         <img src="../../public/images/icon-card.png">
         smartrip
@@ -89,19 +90,21 @@
 
 
   <footer>
-    <a class="footer-link" id="buttonno1" href="/"> 
+    <a class="footer-link" id="buttonno1" href="/">
       <div class="button"><img src="../../public/images/icon-home.png" class="footerimg">home</div>
     </a>
-    <a class="footer-link" id="buttonno2" href="https://twitter.com/wmata" target="_blank"> 
+    <a class="footer-link" id="buttonno2" href="https://twitter.com/wmata" target="_blank">
       <div class="button"><img src="../../public/images/icon-twitter.png" class="footerimg">tweet us</div>
     </a>
-    <a class="footer-link" id="buttonno3" href="tel:202-637-7000" target="_blank"> 
+    <a class="footer-link" id="buttonno3" href="tel:202-637-7000" target="_blank">
       <div class="button"><img src="../../public/images/icon-phone.png" class="footerimg">help?</div>
     </a>
-    <a class="footer-link" id="buttonno4" href="https://smartrip.wmata.com/Account/AccountLogin.aspx" target="_blank"> 
+    <a class="footer-link" id="buttonno4" href="https://smartrip.wmata.com/Account/AccountLogin.aspx" target="_blank">
       <div class="button"><img src="../../public/images/icon-card.png" class="footerimg">smartrip</div>
     </a>
   </footer> <!-- End Bottom nav -->
+    <!-- any reason you're putting some scripts at the bottom and some in the head?
+        generally, it's good to be consistent! -->
     <script src="/public/js/views/bussesView.js"></script>
     <script src="/public/js/views/weatherView.js"></script>
   </body>

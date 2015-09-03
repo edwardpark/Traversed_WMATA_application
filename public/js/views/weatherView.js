@@ -23,6 +23,16 @@ WeatherView.prototype = {
     var weatherIcon = this.weather.currently.icon
     var weatherTemp = parseInt(this.weather.currently.temperature)
     console.log("the weather icon is :" + weatherIcon);
+
+    // any time you have a bunch of if statements, see if you can use the data
+    // directly instead of if statements.
+    // e.g. here, you can can replace all these statements with one line:
+    var wicon = "../../public/images/icon-" + weatherIcon + ".png";
+    // boom ;)
+    // the one 'trick' would be you'd need to update your image names to match
+    // the data coming from the API, but that's not hard, and is more
+    // maintainable!
+
     if (weatherIcon === "rain") {
       var wicon = "../../public/images/icon-rain.png"
     }
@@ -54,6 +64,9 @@ WeatherView.prototype = {
       var wicon = "../../public/images/icon-hail.png"
     }
 
+    // it's a little weird that you're fading these elements in, becuase at this
+    // point in time, they're not yet on the DOM.
+    // better to hide them here and fade them in in your `render` method.
     html.append("<img src='" + wicon + "\' class=\"icon\"/>").fadeIn(2000);
     html.append("<h3>" + weatherTemp + "°F</h3>").fadeIn(2000);
     return(html);

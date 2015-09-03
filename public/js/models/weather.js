@@ -1,3 +1,4 @@
+// looks like this model isn't used at all!
 var Weather = function(info){
   this.lat = info.Lat;
   this.lon = info.Lon;
